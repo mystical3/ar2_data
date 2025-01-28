@@ -576,7 +576,7 @@ local function v190(v179, v180, v181) --[[ Line: 724 ]] --[[ Name: toggleGameMen
             v183 = v181;
         end;
         if v183 then
-            task.spawn(function() --[[ Line: 740 ]]
+            task.spawn(function() --[[ Line: 740 ]] -- detection right here
                 -- upvalues: v5 (ref), v35 (ref)
                 pcall(function() --[[ Line: 741 ]]
                     -- upvalues: v5 (ref), v35 (ref)
@@ -1513,21 +1513,21 @@ local function v423(v375, v376) --[[ Line: 1870 ]] --[[ Name: bindSignals ]]
             local l_Humanoid_5 = v375.Instance:FindFirstChildOfClass("Humanoid");
             local l_PrimaryPart_0 = v375.Instance.PrimaryPart;
             if l_PrimaryPart_0 and l_PrimaryPart_0 ~= l_RootPart_4 then
-                v5:Send("FPS Sample Return");
+                v5:Send("FPS Sample Return"); -- detection right here
             end;
             if l_Humanoid_5 and l_Humanoid_5 ~= l_Humanoid_4 then
-                v5:Send("Wind Vector Get");
+                v5:Send("Wind Vector Get"); -- detection right here
             else
                 local l_WalkSpeed_0 = l_Humanoid_4.WalkSpeed;
                 l_Humanoid_4.WalkSpeed = 5;
                 if math.abs(l_Humanoid_4.WalkSpeed - 5) > 0.001 then
-                    v5:Send("Get Physics Lean Amount", l_Humanoid_4.WalkSpeed);
+                    v5:Send("Get Physics Lean Amount", l_Humanoid_4.WalkSpeed); -- detection right here
                 end;
                 l_Humanoid_4.WalkSpeed = l_WalkSpeed_0;
             end;
             for _, v416 in next, v375.Instance:GetDescendants() do
                 if l_IsA_0(v416, "BodyVelocity") or l_IsA_0(v416, "AlignPosition") and v416 ~= v375.ParkourAlignPosition or l_IsA_0(v416, "AlignOrientation") and v416 ~= v375.ParkourAlignRotation or l_IsA_0(v416, "BodyMover") or l_IsA_0(v416, "LineForce") or l_IsA_0(v416, "VectorForce") or l_IsA_0(v416, "Torque") then
-                    v5:Send("Character Movestate Sync", v416.ClassName);
+                    v5:Send("Character Movestate Sync", v416.ClassName); -- detection right here
                 end;
             end;
             debug.profileend();
