@@ -1,0 +1,1 @@
+The code inside this repo is extremely useful if you know how to code, it allows you to figure out how to basically do everything since the whole game is basically processed through what is in these files.
